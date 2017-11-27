@@ -1,15 +1,33 @@
-# IFTTT
+# assistant-ifttt
 
-Ce plugin permet d'enclencher une action **WebHooks** sur IFTTT.
+Ce plugin de [`assistant-plugins`](https://aymkdn.github.io/assistant-plugins/) permet d'enclencher une action **WebHooks** sur IFTTT.
+
+## Installation
+
+Si vous n'avez pas installé [`assistant-plugins`](https://aymkdn.github.io/assistant-plugins/), alors il faut le faire, et sélectionner **ifttt** comme plugin.
+
+Si vous avez déjà installé [`assistant-plugins`](https://aymkdn.github.io/assistant-plugins/), et que vous souhaitez ajouter ce plugin, alors :
+  - Pour Windows, télécharger [`install_ifttt.bat`](https://github-proxy.kodono.info/?q=https://raw.githubusercontent.com/Aymkdn/assistant-ifttt/master/install_ifttt.bat&download=install_ifttt.bat) dans le répertoire `assistant-plugins`, puis l'exécuter en double-cliquant dessus.  
+  - Pour Linux/MacOS, ouvrir une console dans le répertoire `assistant-plugins` et taper :  
+  `npm install assistant-ifttt --save --loglevel error && npm run-script postinstall`
 
 ## Configuration
 
+.
+
 Se rendre dans le [maker WebHooks de IFTTT](https://ifttt.com/maker_webhooks) et le configurer. Une clé (*key*) vous sera alors donnée (qui ressemble à *dph-Wyhz1Zxlw89WZchMAV*).
 
-Éditer le fichier `configuration.json` afin d'y mettre la clé. Exemple :
+Éditer le fichier `configuration.json` du répertoire `assistant-plugins` afin d'y mettre la clé dans la section concernant le plugin `ifttt`. Exemple :
 ```javascript
 {
-  "key":"dph-Wyhz1Zxlw89WZchMAV"
+  ...
+  {
+    "plugins": {
+      "ifttt": {
+        "key":"dph-Wyhz1Zxlw89WZchMAV"
+      }
+    }
+  }
 }
 
 ```
