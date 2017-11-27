@@ -9,7 +9,7 @@ Si vous n'avez pas installé [`assistant-plugins`](https://aymkdn.github.io/assi
 Si vous avez déjà installé [`assistant-plugins`](https://aymkdn.github.io/assistant-plugins/), et que vous souhaitez ajouter ce plugin, alors :
   - Pour Windows, télécharger [`install_ifttt.bat`](https://github-proxy.kodono.info/?q=https://raw.githubusercontent.com/Aymkdn/assistant-ifttt/master/install_ifttt.bat&download=install_ifttt.bat) dans le répertoire `assistant-plugins`, puis l'exécuter en double-cliquant dessus.  
   - Pour Linux/MacOS, ouvrir une console dans le répertoire `assistant-plugins` et taper :  
-  `npm install assistant-ifttt --save --loglevel error && npm run-script postinstall`
+  `npm install assistant-ifttt@latest --save --loglevel error && npm run-script postinstall`
 
 ## Configuration
 

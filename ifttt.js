@@ -4,6 +4,7 @@ var AssistantIfttt = function(configuration) {
 }
 AssistantIfttt.prototype.init = function(plugins) {
   this.plugins = plugins;
+  if (!this.key) return Promise.reject("[assistant-ifttt] Erreur : vous devez configurer ce plugin !");
   return Promise.resolve(this);
 };
 
@@ -20,13 +21,12 @@ AssistantIfttt.prototype.action = function(commande) {
 /**
  * Initialisation du plugin
  *
+ * @param  {Object} configuration La configuration
  * @param  {Object} plugins Un objet qui contient tous les plugins chargés
  * @return {Promise} resolve(this)
  */
-exports.init=function(plugins) {
-  var configuration = require('./configuration');
-  var an = new AssistantIfttt(configuration);
-  return an.init(plugins)
+exports.init=function(configuration, plugins) {
+  return new AssistantIfttt(configuration).init(plugins)
   .then(function(resource) {
     console.log("[assistant-ifttt] Plugin chargé et prêt.");
     return resource;
