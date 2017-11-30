@@ -13,8 +13,6 @@ Si vous avez déjà installé [`assistant-plugins`](https://aymkdn.github.io/ass
 
 ## Configuration
 
-.
-
 Se rendre dans le [maker WebHooks de IFTTT](https://ifttt.com/maker_webhooks) et le configurer. Une clé (*key*) vous sera alors donnée (qui ressemble à *dph-Wyhz1Zxlw89WZchMAV*).
 
 Éditer le fichier `configuration.json` du répertoire `assistant-plugins` afin d'y mettre la clé dans la section concernant le plugin `ifttt`. Exemple :
