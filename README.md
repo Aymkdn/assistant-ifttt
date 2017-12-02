@@ -13,7 +13,9 @@ Si vous avez déjà installé [`assistant-plugins`](https://aymkdn.github.io/ass
 
 ## Configuration
 
-Se rendre dans le [maker WebHooks de IFTTT](https://ifttt.com/maker_webhooks) et le configurer. Une clé (*key*) vous sera alors donnée (qui ressemble à *dph-Wyhz1Zxlw89WZchMAV*).
+Se rendre dans le [maker WebHooks de IFTTT](https://ifttt.com/maker_webhooks/settings) et le configurer. Une clé (*key*) vous sera alors donnée (qui ressemble à *dph-Wyhz1Zxlw89WZchMAV*).
+
+![capture](https://user-images.githubusercontent.com/946315/33517365-63c50b82-d783-11e7-8c25-c041dff04d15.png)
 
 Éditer le fichier `configuration.json` du répertoire `assistant-plugins` afin d'y mettre la clé dans la section concernant le plugin `ifttt`. Exemple :
 ```javascript
