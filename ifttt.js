@@ -12,10 +12,31 @@ AssistantIfttt.prototype.init = function(plugins) {
  * Fonction appelée par le système central
  *
  * @param {String} commande Le nom du event WebHook créé sur IFTTT
+ * @param {Object} [params] Peut contenir 'value1', 'value2' et 'value3'
  */
-AssistantIfttt.prototype.action = function(commande) {
-  var _this=this;
-  return request({url:'https://maker.ifttt.com/trigger/'+commande+'/with/key/'+_this.key})
+AssistantIfttt.prototype.action = function(commande, params) {
+  // si on détecte un '#' dans la commande, alors on suppose qu'il y a les paramètres supplémentaires
+  if (!params && commande.indexOf('#') > -1) {
+    commande = commande.split('#');
+    params = {};
+    commande.forEach(function(cmd, i) {
+      if (i>0) params['value'+i] = cmd
+    });
+    commande = commande[0];
+  }
+  var req = {
+    method:(params ? 'POST' : 'GET'),
+    url:'https://maker.ifttt.com/trigger/'+commande+'/with/key/'+this.key
+  }
+  if (params) {
+    req.body = {};
+    req.json = true;
+    ['value1','value2','value3'].forEach(function(val) {
+      if (params[val]) req.body[val]=params[val];
+    })
+  }
+
+  return request(req)
 };
 
 /**
