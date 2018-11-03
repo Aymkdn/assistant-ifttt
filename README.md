@@ -42,8 +42,8 @@ Un exemple concret sera plus parlant. Supposons qu'on veuille dire *OK Google, �
 
 On procédera ainsi :
 
-  1) Création d'un applet WebHooks IFTTT qui se déclenche sur la commande `AllLightsOff` et qui va se connecter à Philipps Hue pour éteindre toutes les lampes
-  2) Création d'un applet Google Assistant (*Say a phrase with both a number and a text ingredient*) avec la phrase de déclenchement : "éteins toutes les lumières dans # $"
+  1. Création d'un applet WebHooks IFTTT qui se déclenche sur la commande `AllLightsOff` et qui va se connecter à Philipps Hue pour éteindre toutes les lampes  
+  2. Création d'un applet Google Assistant (*Say a phrase with both a number and a text ingredient*) avec la phrase de déclenchement : "éteins toutes les lumières dans # $"  
   Cet applet enverra à Pushbullet une note avec le titre "Assistant" et le message : `wait_\{\{NumberField\}\} \{\{TextField\}\}|ifttt_AllLightsOff`
 
 Si on décortique la commande envoyée à Pushbullet :
